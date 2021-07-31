@@ -338,9 +338,12 @@ router.get("/allurls",async(req,res)=>{
 
  router.post("/creaturl",async(req,res)=>{
 
+  let date=new Date();
+
   var newURL=req.body;
   const url=new URL({
-    long:newURL.longUrl
+    long:newURL.longUrl,
+    createdAt: date.toDateString()
   })
 
 

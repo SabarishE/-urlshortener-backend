@@ -6,7 +6,8 @@ const urlschema= new mongoose.Schema({
 
           long:{type:String,required:true},
             short:{type:String,default:shortid.generate},
-            visitors:{type:Number,default:0}
+            visitors:{type:Number,default:0},
+            createdAt:{type:Date}
 })
 
 export const URL = mongoose.model("url",urlschema);
