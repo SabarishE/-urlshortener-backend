@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import shortid from "shortid";
 
-
+// scehma for urls in urls collection 
 const urlschema= new mongoose.Schema({
 
           long:{type:String,required:true},
