@@ -57,7 +57,7 @@ const token =jwt.sign(payload,key);
 
 //  sending activation link through email
 
-const onetimelink =adduser.link + "/" +"activation" +"/"+adduser.email+"/"+token ;
+const onetimelink =adduser.link + "/" +adduser.email+"/"+token ;
     res.send({newuser:newuser,link:onetimelink,message:"activation link sent to email !!!"});
     console.log("activation link sent to email !!!",newuser.email);
 
@@ -239,7 +239,7 @@ router.post("/forgotpwd",async(req,res)=>{
       const base =req.body.link
 
 
-   const link= base+"/"+"resetpwd" +"/"+pwdrequester.email+"/"+token;
+   const link= base+"/"+pwdrequester.email+"/"+token;
 
 
     console.log("one time link >>>>",link);
