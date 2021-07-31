@@ -23,8 +23,8 @@ app.get("/",(req,res)=>{
 console.log("welcome to password reset flow (task - 3 of backend) !!!");
 
 
-const url= "mongodb+srv://SabarishE:sabarishe@cluster0.eeimf.mongodb.net/url-shortener"
-
+// const url= "mongodb+srv://SabarishE:sabarishe@cluster0.eeimf.mongodb.net/url-shortener"
+const url=MONGODB_URI
 mongoose.connect(url,{useNewUrlParser:true});
 
 const con=mongoose.connection;
