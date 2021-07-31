@@ -120,53 +120,7 @@ router.get("/activation/:email/:token",async(req,res)=>{
   }
 
 });
-//  --------- shortening url ----------
-router.post("/urlPage",async(req,res)=>{
 
-  var newURL=req.body;
-  const url=new URL({
-    long:newURL.longUrl
-  })
-
-
- try{
-   //saving the user signing up (before activation)
-   const newurl =await url.save();
-   console.log("new url entry >>>>",newurl)
-   res.send({newurl})
- }
- catch(err)
- {
-  res.status(404);
-   console.log("error in saving url",err);
-
- }
-
- })
-
-//  ---------redirecting short url ----------
-
-router.get("/urls",async(req,res)=>{
-
-var allurls=await URL.find();
-res.send(allurls);
-
-
-})
-
-router.get("/:shortUrl",async(req,res)=>{
-
-  var url= await URL.findOne({short:req.params.shortUrl}, function(err,doc){
-
-if(err) throw err; 
-
-doc.visitors++;
-doc.save();
-res.redirect(`https://${doc.long}`);
-console.log("redirection success !!!",doc);
-
-  });
-});
 
 
 //  --------- Log in ---------- 
@@ -365,5 +319,67 @@ var key=pwdrequester[0].randomString
  });
 
 
+
+// ----------URL shortening begins---------
+
+
+
+//-------listing all urls --------
+
+router.get("/allurls",async(req,res)=>{
+
+  var allurls=await URL.find();
+  res.send(allurls);
+  
+  
+  })
+
+//-------creating a short url-----
+
+ router.post("/creaturl",async(req,res)=>{
+
+  var newURL=req.body;
+  const url=new URL({
+    long:newURL.longUrl
+  })
+
+
+ try{
+   //saving the user signing up (before activation)
+   const newurl =await url.save();
+   console.log("new url entry >>>>",newurl)
+   res.send(newurl)
+ }
+ catch(err)
+ {
+  res.status(404);
+   console.log("error in saving url",err);
+
+ }
+
+ })
+
+//  ---------redirecting short url ----------
+
+
+
+router.get("/:shortUrl",async(req,res)=>{
+
+  var url= await URL.findOne({short:req.params.shortUrl}, function(err,doc){
+
+if(err) throw err; 
+
+doc.visitors++;
+doc.save();
+res.redirect(doc.long);
+console.log("redirection success !!!",doc);
+
+  });
+});
+
+
+
+
+// ----------URL shortening ends---------
 
 export default router;
