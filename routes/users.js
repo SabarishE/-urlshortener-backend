@@ -203,7 +203,7 @@ router.post("/forgotpwd",async(req,res)=>{
 
     var mailOptions = {
       from: 'one.trial.one.trial@gmail.com',
-      to:adduser.email,
+      to:pwdrequester.email,
       subject: 'reset password mail',
       text: link
     };
