@@ -63,7 +63,7 @@ const onetimelink =adduser.link + "/" +adduser.email+"/"+token ;
 
     var mailOptions = {
       from: 'one.trial.one.trial@gmail.com',
-      to: 'one.trial.one.trial@gmail.com',
+      to: adduser.email,
       subject: 'Account activation mail',
       text: onetimelink
     };
@@ -203,7 +203,7 @@ router.post("/forgotpwd",async(req,res)=>{
 
     var mailOptions = {
       from: 'one.trial.one.trial@gmail.com',
-      to:'one.trial.one.trial@gmail.com',
+      to:adduser.email,
       subject: 'reset password mail',
       text: link
     };
@@ -320,7 +320,7 @@ var key=pwdrequester[0].randomString
 
 
 
-// ----------URL shortening begins---------
+// ----------URL shortening app begins---------
 
 
 
