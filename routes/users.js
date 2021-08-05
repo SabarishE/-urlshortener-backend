@@ -23,6 +23,23 @@ router.get("/",async(req,res)=>{
     res.send(users);
     
 })
+//------------checking existing email id---------
+
+router.get("/emailcheck/:email",async(req,res)=>{
+
+  const userSigningUp= await User.findOne({email:req.params.email});
+  
+  
+ if(userSigningUp.email){
+res.send({check:true})
+ }
+ else{
+  res.send({check:false})
+
+ }
+  
+})
+
 
 // ------------ Sign up--------------
 
