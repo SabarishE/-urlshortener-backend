@@ -63,7 +63,7 @@ const onetimelink =adduser.link + "/" +adduser.email+"/"+token ;
 
     var mailOptions = {
       from: 'one.trial.one.trial@gmail.com',
-      to: adduser.email,
+      to: newuser.email,
       subject: 'Account activation mail',
       text: onetimelink
     };
