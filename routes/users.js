@@ -29,10 +29,17 @@ router.get("/emailcheck/:email",async(req,res)=>{
 
   try{
     const userSigningUp= await User.findOne({email:req.params.email});
-    res.send({check:true})
+    if(userSigningUp)
+    {
+      res.send({check:true})
+    }
+    else{
+      res.send({check:false})
+    }
+   
   }
 catch(err){
-  res.send({check:false})
+  res.send(err)
 } 
   
 })
