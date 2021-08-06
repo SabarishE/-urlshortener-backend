@@ -1,0 +1,466 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+.App {
+  font-family: sans-serif;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+#header {
+  background-color: rgb(17, 29, 143);
+  font-size: 2rem;
+  color: white;
+  padding: 1rem;
+  font-family: "Franklin Gothic Medium", Arial, sans-serif;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 3.5rem;
+  box-shadow: 0 0 10px 1px rgb(121, 121, 121);
+}
+#header div span {
+  font-family: "Franklin Gothic Medium", "Arial Narrow";
+}
+#header img {
+  vertical-align: middle;
+  margin-right: 1rem;
+  box-shadow: 0 0 5px 2px white;
+  padding: 4px;
+}
+#header span {
+  margin: 0rem 1rem;
+}
+
+#loadingDiv {
+  margin: 0 2rem;
+}
+
+#usernameDiv {
+  font-size: 1rem;
+  padding: 0.5rem;
+  background-color: white;
+  display: flex;
+  justify-content: right;
+}
+#usernameDiv div {
+  float: right;
+  margin: auto;
+}
+
+#usernameDiv button {
+  display: block;
+  border: none;
+  border-radius: 4px;
+  background-color: black;
+  color: rgb(209, 209, 235);
+  cursor: pointer;
+  margin: auto;
+}
+#usernameDiv button:hover {
+  box-shadow: 0 0 2px 2px black;
+}
+
+#loginDiv,
+#registerDiv,
+#forgotDiv,
+#resetDiv {
+  max-width: 300px;
+
+  padding-bottom: 0.5rem;
+  margin: auto;
+  margin-top: 4rem;
+  border: 3px solid rgb(130, 127, 163);
+
+  background-color: transparent;
+}
+#forgotDiv span {
+  color: rgb(185, 186, 190);
+}
+#loginDiv input,
+label,
+#registerDiv input,
+label,
+#forgotDiv input,
+label,
+#resetDiv input,
+label {
+  font-size: 1.5rem;
+  display: block;
+  margin: auto;
+  width: 90%;
+}
+
+#loginDiv input,
+#registerDiv input,
+#forgotDiv input,
+#resetDiv input {
+  margin-bottom: 1rem;
+
+  border-radius: 4px;
+  border: 2px solid rgb(146, 146, 146);
+}
+
+label span {
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+#loginDiv input[type="submit"],
+#registerDiv input[type="submit"],
+#forgotDiv input[type="submit"],
+#resetDiv input[type="submit"] {
+  margin: auto;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  max-width: 50%;
+}
+
+.formDiv {
+  height: 3.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  background: rgb(43, 35, 156);
+  width: 100%;
+  padding: 0.75rem;
+  box-sizing: border-box;
+  line-height: 1.2rem;
+}
+
+.formDiv span {
+  font-size: 0.8rem;
+  margin: 0;
+  line-height: 0.2rem;
+  color: grey;
+}
+
+#loginFooter {
+  display: flex;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+  padding: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+#verifyToken {
+  max-width: 300px;
+
+  margin: auto;
+  margin-top: 5rem;
+}
+
+#verifyToken button {
+  display: block;
+  margin: 1rem auto;
+  width: 75%;
+  font-size: 1.5rem;
+  background-color: black;
+  color: rgb(87, 155, 187);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 0.9sec;
+}
+
+#verifyToken button:hover {
+  box-shadow: 0 0 1px 3px rgb(0, 0, 0);
+}
+#signupVerify {
+  text-align: center;
+}
+#signupVerify button {
+  background-color: rgb(17, 29, 143);
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+#signupVerify button:hover {
+  box-shadow: 0 0 4px 2px rgb(61, 61, 70);
+  transition: 0.3s;
+}
+#popup {
+  width: 270px;
+  height: 200px;
+  box-sizing: border-box;
+  padding: 1rem;
+  background-color: rgb(17, 29, 143);
+  border-radius: 1rem;
+  z-index: 10;
+  position: absolute;
+  border: 1rem solid rgb(21, 21, 59);
+  left: 50%;
+  top: 50%;
+  margin-top: -100px;
+  margin-left: -135px;
+}
+#popup button {
+  display: block;
+  position: relative;
+  left: 190px;
+
+  background-color: black;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  z-index: 15;
+  cursor: pointer;
+}
+
+#popup button:hover {
+  box-shadow: 0 0 2px 2px white;
+}
+#popup span {
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: block;
+  margin: auto;
+  padding: 0.3rem;
+  color: white;
+}
+
+#homepage {
+  width: 300px;
+
+  background-color: rgb(226, 226, 226);
+  margin: auto;
+  padding: 0.5rem;
+  margin-top: 4rem;
+  border-radius: 3px;
+}
+
+#homepage #logout {
+  text-decoration: none;
+  color: black;
+  background-color: rgb(245, 87, 87);
+  width: 100px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  display: block;
+  margin: auto;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+#homepage h3 span {
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+/*  ---------Design for url shortener application---------*/
+#appnav {
+  background-color: rgb(99, 99, 252);
+  padding: 0.5rem;
+  box-shadow: 0 5px 3px -3px rgb(75, 75, 75);
+}
+#appnav button {
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  margin: 0 1rem;
+  background-color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+#appnav button:hover {
+  box-shadow: 0 0 5px 3px white;
+  transition: 0.3s;
+}
+#appcontent {
+  width: 90%;
+  margin: 2rem auto;
+}
+#appcontent h1 img {
+  vertical-align: middle;
+  margin-right: 1rem;
+}
+#dashboard {
+  display: flex;
+  width: 400px;
+  background-color: rgb(192, 192, 240);
+  padding: 1rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: auto;
+}
+#dashboard div {
+  width: 250px;
+  height: 150px;
+  margin: 1rem auto;
+  background-color: rgb(24, 22, 46);
+  color: white;
+  border-radius: 2rem 2rem 0 0;
+  text-align: center;
+}
+
+#dashboard #dashDiv2 {
+  border-radius: 0 0 2rem 2rem;
+}
+#urlformDiv {
+  background-color: rgb(174, 174, 243);
+  display: block;
+  margin: auto;
+  width: 400px;
+  margin-top: 2rem;
+  padding: 1rem;
+
+  border-radius: 0.5rem;
+}
+
+#shortUrlForm label,
+#shortUrlForm input {
+  margin-left: 0;
+  margin-bottom: 0.5rem;
+  height: 2rem;
+  border-radius: 4px;
+  border: none;
+}
+#shortUrlForm input[type="text"] {
+  width: 100%;
+}
+
+#shortUrlForm input[type="submit"],
+#urlformDiv button {
+  background-color: rgb(17, 29, 143);
+  display: block;
+  color: white;
+  border-radius: 4px;
+  border: 1px solid white;
+  min-width: 8rem;
+  cursor: pointer;
+  height: 2rem;
+  margin-left: 0;
+  margin-bottom: 0.5rem;
+}
+
+#createdShortUrl {
+  width: 400px;
+  margin: auto;
+  padding: 0.5rem;
+}
+#createdShortUrl div {
+  margin-bottom: 0.5rem;
+  padding: 0.25rem;
+  border: 1px solid;
+  word-wrap: break-word;
+}
+#createdShortUrl div h5 {
+  margin-bottom: 0.5rem;
+  color: rgb(17, 29, 143);
+}
+table {
+  margin: auto;
+}
+tbody tr :nth-child(even) {
+  background-color: rgb(229, 240, 253);
+}
+
+tbody tr :nth-child(4) {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+table tr th {
+  border: none;
+  color: rgb(17, 29, 143);
+  background-color: rgb(229, 240, 253);
+  padding: 0.5rem 0;
+}
+table tr td {
+  max-width: 10rem;
+  border: 1px solid rgb(17, 29, 143);
+  padding-left: 0.25rem;
+  word-wrap: break-word;
+}
+
+/* ---------media queries ---------- */
+
+@media screen and (max-width: 320px) {
+  #usernameDiv {
+    top: 15rem;
+  }
+}
+
+@media screen and (max-width: 375px and min-width: 320px) {
+  #usernameDiv {
+    top: 7.8rem;
+  }
+}
+@media screen and (max-width: 425px) {
+  #header {
+    height: 100%;
+  }
+  #header div {
+    text-align: center;
+  }
+  #header #loadingDiv {
+    width: 25%;
+    display: block;
+    margin: auto;
+  }
+  #dashboard {
+    width: 95%;
+    margin: auto;
+    box-sizing: border-box;
+  }
+  #dashboard div {
+    width: 280px;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  #urlformDiv {
+    margin: auto;
+    width: 90%;
+  }
+  #createdShortUrl {
+    width: 90%;
+  }
+  #appnav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #appnav button {
+    margin-bottom: 0.5rem;
+  }
+
+  table {
+    width: 95%;
+    margin: auto;
+    /* background-color: red; */
+    padding: 0;
+  }
+  table tr {
+    border: 1px solid blue;
+    width: 100%;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  table tr th {
+    display: none;
+  }
+  table tr td {
+    text-align: right;
+    border: none;
+    padding-left: 40%;
+    display: block;
+    margin: auto;
+    position: relative;
+  }
+  table tr td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    font-weight: bold;
+    color: rgb(17, 29, 143);
+  }
+}
