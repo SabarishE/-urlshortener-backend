@@ -202,7 +202,7 @@ function CreateShortUrl({ popupMsg, popup, setLoading, refresh }) {
                   <div>
                     <div id="long">
                       <h5>LONG URL :</h5>
-                      <a href={`${v.long}`}>{v.long}</a>
+                      <a href={`${v.long}`} rel="noreferrer" target="_blank">{v.long}</a>
                     </div>
                     <div id="short">
                       <h5>SHORT URL :</h5>
@@ -211,6 +211,8 @@ function CreateShortUrl({ popupMsg, popup, setLoading, refresh }) {
                           "https://urlshortener-backend-task4.herokuapp.com/users/" +
                           v.short
                         }
+                        rel="noreferrer" 
+                        target="_blank"
                       >
                         {"https://urlshortener-backend-task4.herokuapp.com/users/" +
                           v.short}
